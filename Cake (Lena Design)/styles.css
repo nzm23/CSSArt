@@ -1,0 +1,84 @@
+/* #f8f2df = background
+#589e59 = cake
+#5ea669 = cake highlight
+#599ccb = top icing
+#db8faf = bottom icing */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fcf1f1;
+    width: 100%;
+    height: 100vh;
+}
+
+.birthday-cake {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vmin;
+    height: 100vmin;
+    border-radius: 50%;
+
+}
+
+.birthday-cake::before {
+    content: "";
+    position: absolute;
+    background: #e6e5e5;
+    width: 72vmin;
+    height: 25vmin;
+    border-radius: 50%;
+    bottom: 15vmin;
+    box-shadow: inset -0.5vmin -1vmin #c7c7c5 ;
+}
+
+.cake {
+    position: absolute;
+    background: #589e59;
+    width: 60vmin;
+    height: 26vmin;
+    top: 45vmin;
+}
+
+.cake::before {
+    content: "";
+    position: absolute;
+    background: #589e59;
+    top: 25vmin;
+    border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+    width: 60vmin;
+    height: 10vmin;
+}
+
+.top {
+    position: absolute;
+    background: #5ea669 ;
+    width: 60vmin;
+    height: 18vmin;
+    border-radius: 50%;
+    top: -9vmin;  
+}
+
+.top::after {
+    content: "";
+    position: absolute;
+    width: 60vmin;
+    height: 18vmin;
+    border-radius: 50%;
+    box-shadow:  inset 1.5vmin 2vmin 1.5vmin black;
+    z-index: 1;
+    opacity: 25%;
+}
+
