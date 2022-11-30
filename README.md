@@ -1,3 +1,3 @@
 # CSSArt
 
-Collection of my progress :)
+Learning CSS through Art :)
