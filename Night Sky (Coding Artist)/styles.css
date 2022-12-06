@@ -1,0 +1,95 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #113755;
+    width: 21.87em;     /* 350px */
+    height: 21.87em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mountains {
+    background-color: #144569;
+    width: 7.5em;
+    height: 12.5em;
+    position: absolute;
+    left: 1.9em;
+    bottom: -0.62em;
+    transform: rotate(-50deg);
+}
+
+.mountains::before {
+    content: "";
+    position: absolute;
+    width: 8.75em;
+    height: 5em;
+    background-color: #144569;
+    left: 3.12em;
+    bottom: 1.25em;
+    transform: rotate(-90deg);
+}
+
+.mountains::after {
+    content: "";
+    position: absolute;
+    width: 11em;
+    height: 6.25em;
+    background-color: #144569;
+    left: 4.4em;
+    bottom: -6.7em;
+    transform: rotate(20deg);
+}
+
+.land {
+    position: absolute;
+    width: 28.12em;
+    height: 5em;
+    background-color: #041524;
+    bottom: -0.31em;
+    transform: rotate(5deg);
+}
+
+.moon {
+    width: 2.2em;
+    height: 2.2em;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 5.62em;
+    top: 4.4em;
+    box-shadow: 0 0 0 0.62rem rgba(32, 105, 149, 0.6),
+    0 0 0 1.25rem rgba(32, 105, 149, 0.5),
+    0 0 0 1.9rem rgba(32, 105, 149, 0.4);
+}
+
+.moon::before {
+    position: absolute;
+    content: "";
+    background-color: #ebefe7;
+    width: 0.62em;
+    height: 0.62em;
+    top: 0.5em;
+    left: 0.35em;
+    border-radius: 50%;
+}
+
+.moon::after {
+    position: absolute;
+    content: "";
+    background-color: #ebefe7;
+    width: 0.40em;
+    height: 0.40em;
+    top: 1.25em;
+    left: 0.75em;
+    border-radius: 50%;
+}
