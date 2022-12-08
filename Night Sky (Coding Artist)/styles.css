@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: antiquewhite;
+}
+
 .container {
     background-color: #113755;
     width: 21.87em;     /* 350px */
@@ -16,6 +20,8 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     overflow: hidden;
+    /* border: 4px solid #041524; */
+    /* box-shadow: 20px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .mountains {
@@ -115,6 +121,7 @@
     width: 1.28em;
     bottom: -0.06em;
     border-radius: 1.25em 1.25em 0 0 ;
+    z-index: -1;
 }
 
 .windmill::before {
@@ -127,4 +134,154 @@
     border-right: 0.06em solid transparent;
     right: -0.1em;
     top: 0.06em;
+}
+
+.light {
+    position: absolute;
+    width: 0.25em;
+    height: 0.25em;
+    background-color: #8daf76;
+    border-radius: 50%;
+    top: 0.75em;
+    left: 0.55em;
+    box-shadow: 
+        0 0 0.06em 0.12em rgba(141, 175, 118, 0.3),
+        0 0 0.06em 0.25em, rgba(141, 175, 118, 0.2);
+}
+
+.light::before {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #0f304f;
+    bottom: -1.25em;
+    left: -0.12em;
+    border-radius: 0.25em 0.25em 0 0;
+}
+
+.blades {
+    width: 3.75em;
+    height: 3.75em;
+    /* background-color: orange; */
+    position: absolute;
+    bottom: -1.9em;
+    left: -1.24em;
+    animation: spin 4s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.blades::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0.5em;
+    background-color: #041524;
+    border: 1px solid rgba(250, 235, 215, 0.5);
+    left: 1.62em;
+    z-index: 1;
+}
+
+.blades::after {
+    content: "";
+    position: absolute;
+    width:  0.5em;
+    height: 100%;
+    background-color: #041524;
+    border: 1px solid rgba(250, 235, 215, 0.5);
+    transform: rotate(90deg);
+    left: 1.62em;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    width: 0.65em;
+    height: 0.65em;
+    background: #041524;
+    background: radial-gradient(circle, #041524 30%, rgba(250, 235, 215, 0.795) 65%);
+    border-radius: 50%;
+    top: -0.38em;
+    left: 0.33em;
+
+}
+
+.star,
+.star::before,
+.star::after {
+    position: absolute;
+    width: 0.18em;
+    height: 0.18em;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: twinkle 1.5s infinite;
+}
+
+@keyframes twinkle{
+    50% {
+        opacity: 1;
+    }
+}
+
+.star-1 {
+    top: 5em;
+    left: 18.75em;
+}
+
+.star-1::before {
+    content: "";
+    top: 1.9em;
+    left: -16.5em;
+    animation-delay: 0.3;
+}
+
+.star-1::after {
+    content: "";
+    top: 5em;
+    left: -12em;
+    animation-delay: 0.7s;
+}
+
+.star-2 {
+    top: 3em;
+    left: 14em;
+}
+
+.star-2::before {
+    content: "";
+    top: 8.5em;
+    left: 2.5em;
+    animation-delay: 0.5s;
+}
+
+.star-2::after {
+    content: "";
+    top: 5em;
+    left: -2em;
+    animation-delay: 0.8s;
+}
+
+.star-3 {
+    top: 8em;
+    left: 18.5em;
+}
+
+.star-3::before {
+    content: "";
+    top: 4.5em;
+    left: -5.5em;
+    animation-delay: 0.7s;
+}
+
+.star-3::after {
+    content: "";
+    top: -2em;
+    left: -3em;
+    animation-delay: 0.3s;
 }
