@@ -1,0 +1,67 @@
+/* 
+background color == #e6ebf0
+sun == #fd7051
+radial gradient == #f3b2a3, #fc8871
+glass == #fff
+glass shadow == #dadfe5
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #e6ebf0;
+}
+
+.sun {
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+    /* Centers the contents */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sun::before, .sun::after {
+    content: '';
+    position: absolute;
+}
+
+.sun::before {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+
+    /* SUN */
+    background-image: 
+        radial-gradient(circle, #f3b2a3, transparent 72%),
+        radial-gradient(circle, #fc8871, transparent 72%);
+    background-repeat: no-repeat;
+    background-color: #fd7051;
+    border-radius: 50%;
+
+    /* Positions the center of the gradient */
+    background-size: 80px 80px, 140px 140x;
+    background-position: -20px -30px, -40px -40px;
+
+    transform: translate(-50%, -50%);
+}
+
+.sun::after {
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    /* Glass effect */
+    backdrop-filter: blur(12px);
+    box-shadow: inset 0 0 24px #fff, 16px 16px 4px#dadfe5;
+    border-radius: 10% 10% 100% 100% / 10% 10% 200% 200%;
+}
