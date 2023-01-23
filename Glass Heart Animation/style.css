@@ -1,0 +1,83 @@
+/* 
+COLORS
+background == #313233
+heart == #ca4b4b
+glass == #fff, 0.3 
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #313233;
+}
+
+.heart {
+    position: relative;
+    width: 0;
+    height: 140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 0;
+
+    /* animation */
+    animation: 2s cubic-bezier(0.175, 0.885, 0.32, 2) infinite;
+}
+
+.heart::before {
+    left: -132px;
+    background-color: #ca4b4b;
+    border-radius: 40% 60% 15% 85% / 40% 90% 10% 60%;
+    transform: rotate(24deg);
+    transform-origin: 100% 100%;
+    /* OR left: -100px */
+
+    /* animation */
+    animation-name: heartLeft;
+}
+
+@keyframes heartLeft {
+    30%, 60% {
+        left: -128px;
+        transform: rotate(18deg) scale(1.1);
+        background-color: #ff6b6b;
+        box-shadow: 0 0 10px #ff6b6b,
+                    0 0 48px #ff6b6b;
+    }
+}
+
+.heart::after {
+    right: -132px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 60% 40% 85% 15% / 90% 40% 60% 10%;
+    transform: rotate(-24deg);
+    transform-origin: 0 100%;
+    /* OR left: -100px */
+
+    /* glass effect */
+    backdrop-filter: blur(16px);
+    box-shadow: -6px -6px 4px -4px rgba(0, 0, 0, 0.05),
+                inset -12px 12px 32px rgba(255, 255, 255, 0.16);
+
+    animation-name: heartRight;
+}
+
+@keyframes heartRight {
+    30%, 60% {
+        right: -128px;
+        transform: rotate(-18deg) scale(1.1);
+        background-color: rgba(255, 255, 255, 0.1);;
+    }
+}
