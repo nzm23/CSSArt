@@ -1,0 +1,76 @@
+/* 
+body-background == #f6bd26
+cup-bg == #fad168
+cup colors == #8c5b33, #b5a581
+heart == #cd4036
+lid == #592c10, #4e2919 (linear gradient)
+steam == #fbeebf
+base == #93480b
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6bd26;
+}
+
+.container {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border: 1px solid black;
+}
+
+.container::before {
+    position: absolute;
+    content: "";
+    background-color: #fad168;
+    height: 480px;
+    width: 480px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 85px;
+    z-index: -1;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    background-color: #f6bd26;
+    width: 100%;
+    height: 90px;
+    top: 488px;
+}
+
+.cup {
+    width: 185px;
+    height: 250px;
+    background: linear-gradient(
+        to top,
+        #8c5b33 30%,
+        #b5a581 30%,
+        #8c5b33 80%,
+        #b5a581 80%
+    );
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 250px;
+    /* clipping region!! */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    overflow: hidden;
+}
+
+.cup::after {
+    content: "";
+    position: absolute;
+    
+}
